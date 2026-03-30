@@ -24,8 +24,39 @@
   .tag-stat { background-color: var(--stat); }
   .tag-code { background-color: var(--code); }
   .tag-heal { background-color: var(--heal); }
+  .color-highlight 
+  {
+  display: inline-block;
+  padding: 4px 15px;
+  border-radius: 20px; /* 圓角膠囊狀 */
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9em;
+  white-space: nowrap;
+  }
+
+  .tag-low-energy { background-color: #58D68D; }
+  .tag-high-energy { background-color: #E74C3C; }
+  .tag-med-energy { background-color: #F39C12; }
+  .tag-extra-energy { background-color: #8E44AD; }
   .highlight { color: #C0392B; font-weight: bold; }
   .exam-focus { background: #FFF3CD; padding: 4px; border-radius: 4px; font-size: 0.85em; display: block; margin-top: 6px; border-left: 3px solid #F39C12; }
+
+  /* 新增：專門給每週回顧使用的容器樣式 */
+.review-flex-container {
+  height: 100%;             /* 填滿 td 的高度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 關鍵：均勻分配行距 */
+  margin: 0;
+  padding: 5px 0;           /* 增加一點上下內距，避免太貼邊 */
+  box-sizing: border-box;
+}
+
+.review-flex-container p {
+  margin: 0;                /* 移除段落預設間距 */
+}
+
 </style>
 </head>
 <body>
@@ -89,12 +120,14 @@
     <tr>
       <td><b>20:00 - 22:00</b><br><span class="tag" style="background: #F39C12;">中耗能統整</span></td>
       <td><b>弱點修補與筆記整理：</b><br>將今日統計學錯題抄入「防呆錯題本」，或整理心理學四大心理學派比較的申論模板。</td>
-      <td rowspan="2" style="background: #E8F6F3;">
-        <b>每週回顧 (Weekly Review)：</b><br>
-        1. 結算本週「執行力百分比」。<br>
-        2. 若執行力達標或已補齊進度，今晚提早放假看電影！<br>
-        3. 準備下週的行事曆時區規劃。
-      </td>
+      <td rowspan="3" style="background: #E8F6F3; height: 1px;"> <div class="review-flex-container">
+    <b>每週回顧 (Weekly Review)：</b>
+    <p>1. 結算本週「執行力百分比」。</p>
+    <p>2. 若執行力達標或已補齊進度，今晚提早放假看電影！</p>
+    <p>3. 準備下週的行事曆時區規劃。</p>
+    <p>4. 休息日當然就是要大玩特玩！</p>
+  </div>
+</td>
     </tr>
     <tr>
       <td><b>22:00 - 23:30</b><br><span class="tag" style="background: #2ECC71;">低耗能收尾</span></td>
@@ -301,22 +334,22 @@
       <th width="45%">意義與後續對策</th>
     </tr>
     <tr>
-      <td><span class="tag low-energy">情境一</span></td>
+      <td><span class="color-highlight tag-low-energy">情境一</span></td>
       <td><b>執行力 > 80%</b><br>且 領先/落後指標 <b>皆有達成</b></td>
       <td><b>【持續維持】</b>這代表你的執行力極高，且計畫非常有效！只需要持續維持這個節奏 12 週就能達成目標。</td>
     </tr>
     <tr>
-      <td><span class="tag high-energy">情境二</span></td>
+      <td><span class="color-highlight tag-high-energy">情境二</span></td>
       <td><b>執行力 < 80%</b><br>且 領先/落後指標 <b>皆未達成</b></td>
       <td><b>【先提高執行力】</b>代表執行力低，且計畫可能無效。此時<b>先不要急著改計畫</b>，應先試著提高執行力（如減少干擾）；若執行力提高了分數仍未起色，再去修改計畫。</td>
     </tr>
     <tr>
-      <td><span class="tag med-energy">情境三</span></td>
+      <td><span class="color-highlight tag-med-energy">情境三</span></td>
       <td><b>執行力 > 80%</b><br>但 領先/落後指標 <b>皆未達成</b></td>
       <td><b>【果斷修改計畫】</b>代表你非常努力，但<b>計畫本身是無效的</b>。例如：瘋狂背單字但台綜大專有名詞還是看不懂。此時必須果斷修改計畫與讀書策略。</td>
     </tr>
     <tr>
-      <td><span class="tag med-energy">情境四</span></td>
+      <td><span class="color-highlight tag-extra-energy">情境四</span></td>
       <td><b>執行力 < 80%</b><br>但 領先/落後指標 <b>居然達成</b></td>
       <td><b>【調降計畫難度】</b>代表目標或計畫標準設定得太嚴格了。請適度調降難度，讓自己能在沒有壓力的情況下維持執行力並達標 。</td>
     </tr>
